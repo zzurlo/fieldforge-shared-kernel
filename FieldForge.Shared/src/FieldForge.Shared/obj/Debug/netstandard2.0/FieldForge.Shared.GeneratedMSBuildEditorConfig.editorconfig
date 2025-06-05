@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = FieldForge.Shared
+build_property.ProjectDir = /workspaces/fieldforge-shared-kernel/FieldForge.Shared/src/FieldForge.Shared/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -1,0 +1,32 @@
+{
+  "name": "@fieldforge/shared",
+  "version": "1.0.0",
+  "description": "Shared TypeScript definitions for FieldForge",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "build": "tsc --project ts/tsconfig.json --declaration --emitDeclarationOnly --outDir lib",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zzurlo/fieldforge-shared-kernel.git"
+  },
+  "keywords": [
+    "fieldforge",
+    "typescript",
+    "definitions"
+  ],
+  "author": "FieldForge Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zzurlo/fieldforge-shared-kernel/issues"
+  },
+  "homepage": "https://github.com/zzurlo/fieldforge-shared-kernel#readme",
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

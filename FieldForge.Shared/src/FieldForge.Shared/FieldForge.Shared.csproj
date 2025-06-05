@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>FieldForge.Shared</RootNamespace>
+    <AssemblyName>FieldForge.Shared</AssemblyName>
+    <Version>1.0.0</Version>
+    <PackageId>FieldForge.Shared</PackageId>
+    <Authors>FieldForge Team</Authors>
+    <Description>Shared models and interfaces for FieldForge</Description>
+    <RepositoryUrl>https://github.com/zzurlo/fieldforge-shared-kernel</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/zzurlo/fieldforge-shared-kernel</PackageProjectUrl>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+</Project>
