@@ -15,12 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Bump version
-      uses: SiqiLu/dotnet-bump-version@v2
-      with:
-        version_mask: "0.0.1.0"
-        github_token: ${{ secrets.NUGET_API_KEY }}
-
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
@@ -35,5 +29,4 @@ jobs:
     - name: Push NuGet package
       run: dotnet nuget push ./nupkg/*.nupkg \
         --source ${{ secrets.NUGET_SOURCE_URL }} \
-        --api-key ${{ secrets.NUGET_API_KEY }} \
-        --skip-duplicate
+        --api-key ${{ secrets.NUGET_API_KEY }} 
