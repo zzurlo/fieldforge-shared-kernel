@@ -27,6 +27,8 @@ jobs:
         dotnet pack ./FieldForge.Shared/src/FieldForge.Shared/FieldForge.Shared.csproj -c Release --no-build -o ./nupkg
 
     - name: Push NuGet package
-      run: dotnet nuget push ./nupkg/*.nupkg \
-        --source ${{ secrets.NUGET_SOURCE_URL }} \
-        --api-key ${{ secrets.NUGET_API_KEY }}
+      run: |
+        dotnet nuget push "./nupkg/*.nupkg" \
+          --api-key ${{ secrets.NUGET_API_KEY }} \
+          --source ${{ secrets.NUGET_SOURCE_URL }} \
+          --skip-duplicate

@@ -1,5 +1,5 @@
 {
-  "name": "@zzurlo/shared",
+  "name": "@zzurlo/fieldforge-shared",
   "version": "1.0.1",
   "description": "Shared TypeScript definitions for FieldForge",
   "main": "lib/index.js",
