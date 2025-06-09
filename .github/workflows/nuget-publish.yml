@@ -22,11 +22,11 @@ jobs:
 
     - name: Restore, Build & Pack
       run: |
-        dotnet restore
-        dotnet build -c Release --no-restore
-        dotnet pack -c Release --no-build -o ./nupkg
+        dotnet restore ./FieldForge.Shared/FieldForge.Shared.sln
+        dotnet build ./FieldForge.Shared/FieldForge.Shared.sln -c Release --no-restore
+        dotnet pack ./FieldForge.Shared/src/FieldForge.Shared/FieldForge.Shared.csproj -c Release --no-build -o ./nupkg
 
     - name: Push NuGet package
       run: dotnet nuget push ./nupkg/*.nupkg \
         --source ${{ secrets.NUGET_SOURCE_URL }} \
-        --api-key ${{ secrets.NUGET_API_KEY }} 
+        --api-key ${{ secrets.NUGET_API_KEY }}
