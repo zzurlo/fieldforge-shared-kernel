@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Shared models and interfaces for FieldForge")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f28ca316c42aa9cb7f6c9bb208f4cb6dabfc20c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+466749c91677dcfae0e03534e9fc7436209c8d07")]
 [assembly: System.Reflection.AssemblyProductAttribute("FieldForge.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FieldForge.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
