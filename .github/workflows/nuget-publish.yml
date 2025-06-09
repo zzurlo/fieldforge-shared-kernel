@@ -8,23 +8,32 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: write
+      packages: write
+
     steps:
     - uses: actions/checkout@v3
-    
+
+    - name: Bump version
+      uses: SiqiLu/dotnet-bump-version@v2
+      with:
+        version_mask: "0.0.1.0"
+        github_token: ${{ secrets.NUGET_API_KEY }}
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '6.0.x'
-        
-    - name: Restore dependencies
-      run: dotnet restore ./FieldForge.Shared/FieldForge.Shared.sln
-      
-    - name: Build
-      run: dotnet build ./FieldForge.Shared/FieldForge.Shared.sln --configuration Release --no-restore
-      
-    - name: Pack
-      run: dotnet pack ./FieldForge.Shared/src/FieldForge.Shared/FieldForge.Shared.csproj --configuration Release --no-build --output ./nupkg
-      
-    - name: Publish to NuGet
-      run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source ${{ secrets.NUGET_SOURCE_URL }}
+
+    - name: Restore, Build & Pack
+      run: |
+        dotnet restore
+        dotnet build -c Release --no-restore
+        dotnet pack -c Release --no-build -o ./nupkg
+
+    - name: Push NuGet package
+      run: dotnet nuget push ./nupkg/*.nupkg \
+        --source ${{ secrets.NUGET_SOURCE_URL }} \
+        --api-key ${{ secrets.NUGET_API_KEY }} \
+        --skip-duplicate
